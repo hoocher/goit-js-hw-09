@@ -14,7 +14,6 @@ function changeBodyColor() {
   startBtn.disabled = true;
   timerId = setInterval(() => {
     bodyEl.style.backgroundColor = `${getRandomHexColor()}`;
-    console.log('Change');
   }, 1000);
 }
 
