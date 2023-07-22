@@ -84,8 +84,8 @@ function convertMs(ms) {
 }
 
 function startTimer() {
+  startBtnEl.disabled = 'true';
   let myTimer = setInterval(() => {
-    startBtnEl.disabled = 'true';
     timeToTimer -= 1000;
     if (timeToTimer <= 0) {
       clearInterval(myTimer);
