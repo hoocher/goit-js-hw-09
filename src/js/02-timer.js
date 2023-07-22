@@ -13,10 +13,6 @@ timersEl.style.display = 'Flex';
 timersEl.style.gap = '30px';
 timersEl.style.justifyContent = 'center';
 
-let days = 0;
-let hours = 0;
-let minutes = 0;
-let seconds = 0;
 let timeInTimer = null;
 
 let inputedData = null;
@@ -53,10 +49,7 @@ function addLeadingZero(value) {
 
 function timerTime() {
   timeInTimer = convertMs(timeToTimer);
-  days = timeInTimer.days;
-  hours = timeInTimer.hours;
-  minutes = timeInTimer.minutes;
-  seconds = timeInTimer.seconds;
+  const { days, hours, minutes, seconds } = timeInTimer;
 
   daysTimer.textContent = addLeadingZero(days);
   hourTimer.textContent = addLeadingZero(hours);
