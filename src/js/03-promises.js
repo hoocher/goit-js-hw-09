@@ -1,3 +1,7 @@
+import Notiflix from 'notiflix';
+
+Notiflix.Notify.init({ position: 'center-center' });
+
 const formEl = document.querySelector('form');
 let position = 0;
 let inputDelay = 0;
@@ -28,10 +32,14 @@ function submit(event) {
     position = i;
     createPromise(position, inputDelay)
       .then(({ position, delay }) => {
-        console.log(`✅ Fulfilled promise ${position} in ${delay}ms`);
+        Notiflix.Notify.success(
+          `✅ Fulfilled promise ${position} in ${delay}ms`
+        );
       })
       .catch(({ position, delay }) => {
-        console.log(`❌ Rejected promise ${position} in ${delay}ms`);
+        Notiflix.Notify.failure(
+          `❌ Rejected promise ${position} in ${delay}ms`
+        );
       });
     inputDelay += inputStep;
   }
